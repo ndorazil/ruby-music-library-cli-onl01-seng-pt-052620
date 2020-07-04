@@ -1,5 +1,7 @@
+require 'pry'
+
 class Song
-    attr_accessor :name, :artist, :genre
+    attr_accessor :name, :artist, :genre, :filename
 
     @@all = []
 
@@ -39,5 +41,15 @@ class Song
         else
             Song.find_by_name(name)
         end
+    end
+
+    def self.new_from_filename(filename)
+        artist = filename.chomp(".mp3").split(" - ")[0]
+        title = filename.chomp(".mp3").split(" - ")[1]
+        genre = filename.chomp(".mp3").split(" - ")[2]
+        new_artist = Artist.find_or_create_by_name(artist)
+        new_genre = Genre. 
+
+        # binding.pry
     end
 end

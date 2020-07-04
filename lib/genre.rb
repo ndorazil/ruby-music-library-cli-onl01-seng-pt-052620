@@ -1,7 +1,7 @@
 class Genre
     extend Concerns::Findable
 
-    attr_accessor :name
+    attr_accessor :name, :artist, :name
 
     def initialize(name)
         @name = name
